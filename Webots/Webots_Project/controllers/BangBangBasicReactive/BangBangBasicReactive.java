@@ -14,14 +14,14 @@ public class BangBangBasicReactive extends DifferentialWheels {
 	private static int MAX_SPEED = 1000; // max. motor speed
 
 
-	private DistanceSensor[] sensors; // Array with all distance sensors
+	private DistanceSensor[] sensors; // Array with all distance _distanceSensors
 
 	/**
 	 * Constructor
 	 */
 	public BangBangBasicReactive() {
 		super();
-		// get distance sensors and save them in array
+		// get distance _distanceSensors and save them in array
 		sensors = new DistanceSensor[] { getDistanceSensor("ps5"),
 				getDistanceSensor("ps7"), getDistanceSensor("ps0"),
 				getDistanceSensor("ps2") };
