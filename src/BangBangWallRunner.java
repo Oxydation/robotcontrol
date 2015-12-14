@@ -35,17 +35,6 @@ public class BangBangWallRunner extends BaseController {
             } else {
                 driveForward();
             }
-
-            /*
-
-            else if (_distanceSensors[S_LEFT].getValue() >= DISTANCE_TO_WALL) {
-                driveRight();
-            } else if (_distanceSensors[S_LEFT].getValue() >= DISTANCE_TO_WALL) {
-                driveLeft();
-            }
-             */
-            // drive forward if nothing is in front of the robot
-            //driveForward();
         }
     }
 
