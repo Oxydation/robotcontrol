@@ -15,24 +15,25 @@ public class BangBangWallRunner extends BaseController {
     @Override
     public void run() {
         while (step(TIME_STEP) != -1) {
-            if (_distanceSensors[S_FRONT_LEFT].getValue() < DISTANCE_TO_WALL
-                    && _distanceSensors[S_FRONT_RIGHT].getValue() < DISTANCE_TO_WALL) {
+
+            if (_distanceSensors[S_LEFT].getValue() >= DISTANCE_TO_WALL
+                    && _distanceSensors[S_FRONT_LEFT].getValue() >= DISTANCE_TO_WALL) {
+                driveRight();
+            } else if (_distanceSensors[S_RIGHT].getValue() >= DISTANCE_TO_WALL
+                    && _distanceSensors[S_FRONT_RIGHT].getValue() >= DISTANCE_TO_WALL) {
+                driveLeft();
+            } else if (_distanceSensors[S_FRONT_RIGHT].getValue() >= DISTANCE_TO_WALL
+                    && _distanceSensors[S_FRONT_RIGHT].getValue() > _distanceSensors[S_FRONT_LEFT].getValue()) {
+                driveLeft();
+            } else if (_distanceSensors[S_FRONT_LEFT].getValue() >= DISTANCE_TO_WALL
+                    && _distanceSensors[S_FRONT_LEFT].getValue() > _distanceSensors[S_FRONT_RIGHT].getValue()) {
+                driveRight();
+            } else if (_distanceSensors[S_RIGHT].getValue() >= DISTANCE_TO_WALL) {
+                driveRight();
+            } else if (_distanceSensors[S_LEFT].getValue() >= DISTANCE_TO_WALL) {
+                driveLeft();
+            } else {
                 driveForward();
-            } else if (_distanceSensors[S_RIGHT].getValue() > DISTANCE_TO_WALL
-                    && _distanceSensors[S_FRONT_LEFT].getValue() > DISTANCE_TO_WALL
-                    && _distanceSensors[S_FRONT_RIGHT].getValue() > DISTANCE_TO_WALL) {
-                driveRight();
-            } else if (_distanceSensors[S_LEFT].getValue() > DISTANCE_TO_WALL
-                    && _distanceSensors[S_FRONT_LEFT].getValue() > DISTANCE_TO_WALL
-                    && _distanceSensors[S_FRONT_RIGHT].getValue() > DISTANCE_TO_WALL) {
-                driveRight();
-            } else if (_distanceSensors[S_FRONT_LEFT].getValue() > DISTANCE_TO_WALL
-                    && _distanceSensors[S_FRONT_RIGHT].getValue() > DISTANCE_TO_WALL) {
-                driveRight();
-            } else if (_distanceSensors[S_RIGHT].getValue() < DISTANCE_TO_WALL) {
-                driveLeft();
-            } else if (_distanceSensors[S_LEFT].getValue() < DISTANCE_TO_WALL) {
-                driveLeft();
             }
 
             /*
@@ -69,6 +70,7 @@ public class BangBangWallRunner extends BaseController {
      *
      * @param args
      */
+
     public static void main(String[] args) {
         BangBangWallRunner controller = new BangBangWallRunner();
         controller.run();
