@@ -1,13 +1,12 @@
 /**
  * Created by Mathias on 07/12/2015.
  */
-public class ProportionalLightRunner extends BaseController {
-    private static int K_STEERING = 10;
+public class ProportionalLightRunner extends ProportionalBaseController {
     private static int NUMBER_OF_MOTORS = 2;
 
     private static double[][] controllerMatrix = {
-            {1,1, 1, 0, -1, 0, 0, 0},
-            {0, 0, 0, -1, 0, 1, 1, 1}};
+            {1, 1, 1, 0, -1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0},
+            {0, 0, 0, -1, 0, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0}};
 
     /**
      * Constructor
@@ -15,49 +14,42 @@ public class ProportionalLightRunner extends BaseController {
     public ProportionalLightRunner() {
         super();
         enableLightSensors();
+        enableDistanceSensors();
     }
 
     @Override
-    public void run() {
-        // Steering angle command = Ksteering * (reference distance – sonar distance)
-        while (step(TIME_STEP) != -1) {
-            double[] sensors = new double[]{
-                    _lightSensors[S_FRONT_RIGHT].getValue(),
-                    _lightSensors[S_MIDDLE_RIGHT].getValue(),
-                    _lightSensors[S_RIGHT].getValue(),
-                    _lightSensors[S_BACK_RIGHT].getValue(),
-                    _lightSensors[S_BACK_LEFT].getValue(),
-                    _lightSensors[S_LEFT].getValue(),
-                    _lightSensors[S_MIDDLE_LEFT].getValue(),
-                    _lightSensors[S_FRONT_LEFT].getValue()
-            };
-            double[] speeds = calcSpeed(sensors);
-            setSpeed(speeds[0], speeds[1]);
-        }
+    public double[][] getMatrix() {
+        return controllerMatrix;
     }
 
-    private double[] calcSpeed(double[] sensors) {
+    @Override
+    public double[] calcSpeed(double[] sensors) {
         double[] speeds = new double[NUMBER_OF_MOTORS];
 
         for (int i = 0; i < NUMBER_OF_MOTORS; i++) {
             speeds[i] = 0.0;
 
             for (int sensor = 0; sensor < sensors.length; sensor++) {
-                speeds[i] += controllerMatrix[i][sensor] * normalizeLight(sensors[sensor]);
+                // Maybe make this line abstract because this is the part which changes
+                speeds[i] += getMatrix()[i][sensor] * normalizeLight(sensors[sensor]);
             }
         }
         return speeds;
     }
 
-    private double normalizeLight(double light){
+//    public double calcSingleSpeed(int k, double sensorValue){
+//
+//    }
+
+    private double normalizeLight(double light) {
         //max und min light eventl. noch anpassen
         int maxLight = 50;
         int minLight = 4000;
-        double output = 1000 - ((light - maxLight) *  1000) / (minLight - maxLight);
-        if(output < -1000){
+        double output = 1000 - ((light - maxLight) * 1000) / (minLight - maxLight);
+        if (output < -1000) {
             output = 0;
         }
-        if(output > 1000){
+        if (output > 1000) {
             output = 1000;
         }
         return output;
@@ -73,5 +65,4 @@ public class ProportionalLightRunner extends BaseController {
         ProportionalLightRunner controller = new ProportionalLightRunner();
         controller.run();
     }
-
 }
