@@ -38,4 +38,27 @@ public abstract class ProportionalBaseController extends BaseController {
         }
 
     public abstract double[] calcSpeed(double[] sensors) ;
+
+    protected double normalizeLight(double light) {
+        //max und min light eventl. noch anpassen
+        int maxLight = 50;
+        int minLight = 4000;
+        double output = 1000 - ((light - maxLight) * 1000) / (minLight - maxLight);
+        if (output < -1000) {
+            output = -1000;
+        }
+        if (output > 1000) {
+            output = 1000;
+        }
+        return output;
+    }
+
+
+    protected double checkDistance(double distance) {
+       double output = distance;
+        if(distance > 1000){
+            output = 1000;
+        }
+        return output;
+    }
 }
