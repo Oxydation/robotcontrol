@@ -14,6 +14,8 @@ public abstract class BaseController extends DifferentialWheels {
     protected static int S_RIGHT = 3; // Sensor left
     protected static int S_BACK_LEFT = 4;
     protected static int S_BACK_RIGHT = 5;
+    protected static int S_MIDDLE_LEFT = 6;
+    protected static int S_MIDDLE_RIGHT = 7;
 
     protected DistanceSensor[] _distanceSensors; // Array with all distance _distanceSensors
     protected LightSensor[] _lightSensors;
@@ -22,12 +24,12 @@ public abstract class BaseController extends DifferentialWheels {
         // get distance _distanceSensors and save them in array
         _distanceSensors = new DistanceSensor[]{getDistanceSensor("ps5"),
                 getDistanceSensor("ps7"), getDistanceSensor("ps0"),
-                getDistanceSensor("ps2"),getDistanceSensor("ps4"), getDistanceSensor("ps3")};
+                getDistanceSensor("ps2"),getDistanceSensor("ps4"), getDistanceSensor("ps3"), getDistanceSensor("ps6"), getDistanceSensor("ps1")};
 
         // get distance _distanceSensors and save them in array
         _lightSensors = new LightSensor[]{getLightSensor("ls5"),
                 getLightSensor("ls7"), getLightSensor("ls0"),
-                getLightSensor("ls2"), getLightSensor("ls4"), getLightSensor("ls3")};
+                getLightSensor("ls2"), getLightSensor("ls4"), getLightSensor("ls3"), getLightSensor("ls6"), getLightSensor("ls1")};
     }
 
     protected void enableLightSensors() {

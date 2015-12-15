@@ -6,8 +6,8 @@ public class ProportionalLightRunner extends BaseController {
     private static int NUMBER_OF_MOTORS = 2;
 
     private static double[][] controllerMatrix = {
-            {0, 0, 0, 0, -0.5, 1, 1, 1},
-            {1,1, 1, -0.5, 0, 0, 0, 0}};
+            {1,1, 1, 0, -1, 0, 0, 0},
+            {0, 0, 0, -1, 0, 1, 1, 1}};
 
     /**
      * Constructor
