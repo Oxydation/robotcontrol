@@ -1,17 +1,19 @@
 /**
- * Created by Mathias on 07/12/2015.
+ * Created by Jasmin on 15.12.2015.
  */
-public class ProportionalLightRunner extends ProportionalBaseController {
+public class ProportionalLightStopper extends ProportionalBaseController {
     private static int NUMBER_OF_MOTORS = 2;
 
+    //TODO anpassen
     private static double[][] controllerMatrix = {
             {1, 1, 1, 0, -1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0},
             {0, 0, 0, -1, 0, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0}};
 
+
     /**
      * Constructor
      */
-    public ProportionalLightRunner() {
+    public ProportionalLightStopper() {
         super();
         enableLightSensors();
         enableDistanceSensors();
@@ -31,16 +33,13 @@ public class ProportionalLightRunner extends ProportionalBaseController {
 
             for (int sensor = 0; sensor < sensors.length; sensor++) {
                 // Maybe make this line abstract because this is the part which changes
-                speeds[i] += getMatrix()[i][sensor] * normalizeLight(sensors[sensor]);
+                if(sensor < 8){
+                    speeds[i] += getMatrix()[i][sensor] * normalizeLight(sensors[sensor]);
+                }
             }
         }
         return speeds;
     }
-
-//    public double calcSingleSpeed(int k, double sensorValue){
-//
-//    }
-
 
 
     /**
@@ -50,7 +49,7 @@ public class ProportionalLightRunner extends ProportionalBaseController {
      * @param args
      */
     public static void main(String[] args) {
-        ProportionalLightRunner controller = new ProportionalLightRunner();
+        ProportionalLightStopper controller = new ProportionalLightStopper();
         controller.run();
     }
 }
