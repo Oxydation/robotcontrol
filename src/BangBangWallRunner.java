@@ -1,7 +1,7 @@
 /**
  * Created by Mathias on 14/12/2015.
  */
-public class BangBangWallRunner extends BaseController {
+public class BangBangWallRunner extends BangBangBaseController {
     private static int DISTANCE_TO_WALL = 50;
 
     /**

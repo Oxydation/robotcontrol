@@ -1,7 +1,7 @@
 /**
  * Created by Mathias on 14/12/2015.
  */
-public class BangBangBallPusher extends BaseController {
+public class BangBangBallPusher extends BangBangBaseController {
     private static int OBSTACLE_DISTANCE = 200;
     /**
      * Constructor

@@ -1,7 +1,7 @@
 /**
  * Created by Mathias on 14/12/2015.
  */
-public class BangBangLightRunner extends BaseController {
+public class BangBangLightRunner extends BangBangBaseController {
     /**
      * Constructor
      */

@@ -40,7 +40,7 @@ public class ProportionalLightRunner extends BaseController {
             speeds[i] = 0.0;
 
             for (int sensor = 0; sensor < sensors.length; sensor++) {
-                speeds[i] += controllerMatrix[i][sensor] * (1.0 - sensors[sensor] / RANGE);
+                speeds[i] += controllerMatrix[i][sensor] * (sensors[sensor]);
             }
         }
         return speeds;
