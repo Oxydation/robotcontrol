@@ -24,6 +24,11 @@ public class ProportionalBallPusher extends ProportionalBaseController{
     }
 
     @Override
+    public double[] getConstantVector() {
+        return new double[]{0,0,0,0,0,0,0,0,100, 50, 0, 0, 0, 0, 50, 100};
+    }
+
+    @Override
     public double[] calcSpeed(double[] sensors) {
         double[] speeds = new double[NUMBER_OF_MOTORS];
 
