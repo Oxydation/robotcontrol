@@ -4,11 +4,10 @@
 public class ProportionalLightStopper extends ProportionalBaseController {
     private static int NUMBER_OF_MOTORS = 2;
 
-    //TODO anpassen
     private static double[][] controllerMatrix = {
-            {1, 1, 1, 0, -1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0},
-            {0, 0, 0, -1, 0, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0}};
-
+            // FRONT_RIGHT, MIDDLE_RIGHT, RIGHT, BACK_RIGHT, BACK_LEFT, LEFT, MIDDLE_LEFT, FRONT_LEFT
+            {0, 0, 0, 0.4, 0, -1, -1, -1, 0, 0, 0, 0, 0, 0, 0, 0},
+            {-1, -1, -1, 0, 0.4, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0}};
 
     /**
      * Constructor
@@ -25,6 +24,11 @@ public class ProportionalLightStopper extends ProportionalBaseController {
     }
 
     @Override
+    public double[] getConstantVector() {
+        return new double[]{120, 120, 120, 120, 120, 120, 120, 120};
+    }
+
+    @Override
     public double[] calcSpeed(double[] sensors) {
         double[] speeds = new double[NUMBER_OF_MOTORS];
 
@@ -33,14 +37,14 @@ public class ProportionalLightStopper extends ProportionalBaseController {
 
             for (int sensor = 0; sensor < sensors.length; sensor++) {
                 // Maybe make this line abstract because this is the part which changes
-                if(sensor < 8){
-                    speeds[i] += getMatrix()[i][sensor] * normalizeLight(sensors[sensor]);
+                if (sensor < 8) {
+                    speeds[i] += getMatrix()[i][sensor] * normalizeLight(sensors[sensor]) + getConstantVector()[sensor];
                 }
             }
         }
+
         return speeds;
     }
-
 
     /**
      * Main method - in this method an instance of the controller is created and

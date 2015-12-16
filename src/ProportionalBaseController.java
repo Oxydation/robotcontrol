@@ -5,6 +5,8 @@ public abstract class ProportionalBaseController extends BaseController {
 
     public abstract double[][] getMatrix();
 
+    public abstract double[] getConstantVector();
+
     protected double[] getSensorValues() {
         double[] sensors = new double[]{
                 _lightSensors[S_FRONT_RIGHT].getValue(),
@@ -30,14 +32,14 @@ public abstract class ProportionalBaseController extends BaseController {
 
     @Override
     public void run() {
-            while (step(TIME_STEP) != -1) {
-                double[] sensors = getSensorValues();
-                double[] speeds = calcSpeed(sensors);
-                setSpeed(speeds[0], speeds[1]);
-            }
+        while (step(TIME_STEP) != -1) {
+            double[] sensors = getSensorValues();
+            double[] speeds = calcSpeed(sensors);
+            setSpeed(speeds[0], speeds[1]);
         }
+    }
 
-    public abstract double[] calcSpeed(double[] sensors) ;
+    public abstract double[] calcSpeed(double[] sensors);
 
     protected double normalizeLight(double light) {
         //max und min light eventl. noch anpassen
@@ -53,10 +55,23 @@ public abstract class ProportionalBaseController extends BaseController {
         return output;
     }
 
+    protected double normalizeSpeed(double speed, int sensors) {
+        //max und min light eventl. noch anpassen
+        int maxLight = 50;
+        int minLight = 4000;
+        double output = 1000 - ((speed - maxLight) * 1000) / (minLight - maxLight);
+        if (output < -1000) {
+            output = -1000;
+        }
+        if (output > 1000) {
+            output = 1000;
+        }
+        return output;
+    }
 
     protected double checkDistance(double distance) {
-       double output = distance;
-        if(distance > 1000){
+        double output = distance;
+        if (distance > 1000) {
             output = 1000;
         }
         return output;

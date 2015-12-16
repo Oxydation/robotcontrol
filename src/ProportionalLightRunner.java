@@ -23,6 +23,11 @@ public class ProportionalLightRunner extends ProportionalBaseController {
     }
 
     @Override
+    public double[] getConstantVector() {
+        return new double[0];
+    }
+
+    @Override
     public double[] calcSpeed(double[] sensors) {
         double[] speeds = new double[NUMBER_OF_MOTORS];
 
@@ -30,8 +35,10 @@ public class ProportionalLightRunner extends ProportionalBaseController {
             speeds[i] = 0.0;
 
             for (int sensor = 0; sensor < sensors.length; sensor++) {
-                // Maybe make this line abstract because this is the part which changes
-                speeds[i] += getMatrix()[i][sensor] * normalizeLight(sensors[sensor]);
+                if (sensor < 8) {
+                    // Maybe make this line abstract because this is the part which changes
+                    speeds[i] += getMatrix()[i][sensor] * normalizeLight(sensors[sensor]);
+                }
             }
         }
         return speeds;
@@ -40,8 +47,6 @@ public class ProportionalLightRunner extends ProportionalBaseController {
 //    public double calcSingleSpeed(int k, double sensorValue){
 //
 //    }
-
-
 
     /**
      * Main method - in this method an instance of the controller is created and
