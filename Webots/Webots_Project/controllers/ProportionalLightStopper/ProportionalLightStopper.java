@@ -6,8 +6,8 @@ public class ProportionalLightStopper extends ProportionalBaseController {
 
     private static double[][] controllerMatrix = {
             // FRONT_RIGHT, MIDDLE_RIGHT, RIGHT, BACK_RIGHT, BACK_LEFT, LEFT, MIDDLE_LEFT, FRONT_LEFT
-            {0, 0, 0, 0.3, 0, -1, -1, -1, 0, 0, 0, 0, 0, 0, 0, 0},
-            {-1, -1, -1, 0, 0.3, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0}};
+            {0, 0, 0, 0.4, 0, -1, -1, -1, 0, 0, 0, 0, 0, 0, 0, 0},
+            {-1, -1, -1, 0, 0.4, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0}};
 
     /**
      * Constructor
@@ -25,7 +25,7 @@ public class ProportionalLightStopper extends ProportionalBaseController {
 
     @Override
     public double[] getConstantVector() {
-        return new double[]{120, 120, 120, 120, 120, 120, 120, 120};
+        return new double[]{100, 100, 100, -20, -20, 100, 100, 100};
     }
 
     @Override

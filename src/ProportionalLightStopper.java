@@ -25,7 +25,7 @@ public class ProportionalLightStopper extends ProportionalBaseController {
 
     @Override
     public double[] getConstantVector() {
-        return new double[]{120, 120, 120, 120, 120, 120, 120, 120};
+        return new double[]{100, 100, 100, -20, -20, 100, 100, 100};
     }
 
     @Override
