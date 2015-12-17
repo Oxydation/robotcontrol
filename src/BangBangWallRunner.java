@@ -12,6 +12,18 @@ public class BangBangWallRunner extends BangBangBaseController {
         enableDistanceSensors();
     }
 
+    /**
+     * Main method - in this method an instance of the controller is created and
+     * the method to launch the robot is called.
+     *
+     * @param args
+     */
+
+    public static void main(String[] args) {
+        BangBangWallRunner controller = new BangBangWallRunner();
+        controller.run();
+    }
+
     @Override
     public void run() {
         while (step(TIME_STEP) != -1) {
@@ -51,17 +63,5 @@ public class BangBangWallRunner extends BangBangBaseController {
     @Override
     protected void driveForward() {
         setSpeed(MAX_SPEED, MAX_SPEED);
-    }
-
-    /**
-     * Main method - in this method an instance of the controller is created and
-     * the method to launch the robot is called.
-     *
-     * @param args
-     */
-
-    public static void main(String[] args) {
-        BangBangWallRunner controller = new BangBangWallRunner();
-        controller.run();
     }
 }

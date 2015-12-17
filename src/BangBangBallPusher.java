@@ -3,12 +3,25 @@
  */
 public class BangBangBallPusher extends BangBangBaseController {
     private static int OBSTACLE_DISTANCE = 200;
+
     /**
      * Constructor
      */
     public BangBangBallPusher() {
         super();
         enableDistanceSensors();
+    }
+
+    /**
+     * Main method - in this method an instance of the controller is created and
+     * the method to launch the robot is called.
+     *
+     * @param args
+     */
+
+    public static void main(String[] args) {
+        BangBangBallPusher controller = new BangBangBallPusher();
+        controller.run();
     }
 
     @Override
@@ -26,7 +39,7 @@ public class BangBangBallPusher extends BangBangBaseController {
                 driveLeft();
             } else if (rightObstacle) {
                 driveRight();
-            }else{
+            } else {
                 driveForward();
             }
         }
@@ -45,17 +58,5 @@ public class BangBangBallPusher extends BangBangBaseController {
     @Override
     protected void driveForward() {
         setSpeed(MAX_SPEED, MAX_SPEED);
-    }
-
-    /**
-     * Main method - in this method an instance of the controller is created and
-     * the method to launch the robot is called.
-     *
-     * @param args
-     */
-
-    public static void main(String[] args) {
-        BangBangBallPusher controller = new BangBangBallPusher();
-        controller.run();
     }
 }

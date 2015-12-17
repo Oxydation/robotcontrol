@@ -17,10 +17,25 @@ public class ProportionalLightRunner extends ProportionalBaseController {
         enableDistanceSensors();
     }
 
+    /**
+     * Main method - in this method an instance of the controller is created and
+     * the method to launch the robot is called.
+     *
+     * @param args
+     */
+    public static void main(String[] args) {
+        ProportionalLightRunner controller = new ProportionalLightRunner();
+        controller.run();
+    }
+
     @Override
     public double[][] getMatrix() {
         return controllerMatrix;
     }
+
+//    public double calcSingleSpeed(int k, double sensorValue){
+//
+//    }
 
     @Override
     public double[] calcSpeed(double[] sensors) {
@@ -37,10 +52,6 @@ public class ProportionalLightRunner extends ProportionalBaseController {
         return speeds;
     }
 
-//    public double calcSingleSpeed(int k, double sensorValue){
-//
-//    }
-
     private double normalizeLight(double light) {
         //max und min light eventl. noch anpassen
         int maxLight = 50;
@@ -53,16 +64,5 @@ public class ProportionalLightRunner extends ProportionalBaseController {
             output = 1000;
         }
         return output;
-    }
-
-    /**
-     * Main method - in this method an instance of the controller is created and
-     * the method to launch the robot is called.
-     *
-     * @param args
-     */
-    public static void main(String[] args) {
-        ProportionalLightRunner controller = new ProportionalLightRunner();
-        controller.run();
     }
 }

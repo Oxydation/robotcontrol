@@ -30,12 +30,12 @@ public abstract class ProportionalBaseController extends BaseController {
 
     @Override
     public void run() {
-            while (step(TIME_STEP) != -1) {
-                double[] sensors = getSensorValues();
-                double[] speeds = calcSpeed(sensors);
-                setSpeed(speeds[0], speeds[1]);
-            }
+        while (step(TIME_STEP) != -1) {
+            double[] sensors = getSensorValues();
+            double[] speeds = calcSpeed(sensors);
+            setSpeed(speeds[0], speeds[1]);
         }
+    }
 
-    public abstract double[] calcSpeed(double[] sensors) ;
+    public abstract double[] calcSpeed(double[] sensors);
 }

@@ -27,7 +27,7 @@ public abstract class BaseController extends DifferentialWheels {
         // get distance _distanceSensors and save them in array
         _distanceSensors = new DistanceSensor[]{getDistanceSensor("ps5"),
                 getDistanceSensor("ps7"), getDistanceSensor("ps0"),
-                getDistanceSensor("ps2"),getDistanceSensor("ps4"), getDistanceSensor("ps3")};
+                getDistanceSensor("ps2"), getDistanceSensor("ps4"), getDistanceSensor("ps3")};
 
         // get distance _distanceSensors and save them in array
         _lightSensors = new LightSensor[]{getLightSensor("ls5"),

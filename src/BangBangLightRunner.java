@@ -10,6 +10,17 @@ public class BangBangLightRunner extends BangBangBaseController {
         enableLightSensors();
     }
 
+    /**
+     * Main method - in this method an instance of the controller is created and
+     * the method to launch the robot is called.
+     *
+     * @param args
+     */
+    public static void main(String[] args) {
+        BangBangLightRunner controller = new BangBangLightRunner();
+        controller.run();
+    }
+
     @Override
     public void run() {
         while (step(TIME_STEP) != -1) {
@@ -42,17 +53,6 @@ public class BangBangLightRunner extends BangBangBaseController {
     @Override
     protected void driveForward() {
         setSpeed(MAX_SPEED, MAX_SPEED);
-    }
-
-    /**
-     * Main method - in this method an instance of the controller is created and
-     * the method to launch the robot is called.
-     *
-     * @param args
-     */
-    public static void main(String[] args) {
-        BangBangLightRunner controller = new BangBangLightRunner();
-        controller.run();
     }
 }
 

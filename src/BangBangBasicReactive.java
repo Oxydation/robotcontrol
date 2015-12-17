@@ -8,6 +8,17 @@ public class BangBangBasicReactive extends BangBangBaseController {
     }
 
     /**
+     * Main method - in this method an instance of the controller is created and
+     * the method to launch the robot is called.
+     *
+     * @param args
+     */
+    public static void main(String[] args) {
+        BangBangBasicReactive controller = new BangBangBasicReactive();
+        controller.run();
+    }
+
+    /**
      * User defined function for initializing and running the
      * BangBangFollowTheWall class
      */
@@ -41,16 +52,5 @@ public class BangBangBasicReactive extends BangBangBaseController {
     @Override
     protected void driveForward() {
         setSpeed(MAX_SPEED, MAX_SPEED);
-    }
-
-    /**
-     * Main method - in this method an instance of the controller is created and
-     * the method to launch the robot is called.
-     *
-     * @param args
-     */
-    public static void main(String[] args) {
-        BangBangBasicReactive controller = new BangBangBasicReactive();
-        controller.run();
     }
 }

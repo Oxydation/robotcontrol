@@ -18,6 +18,17 @@ public class ProportionalLightStopper extends ProportionalBaseController {
         enableDistanceSensors();
     }
 
+    /**
+     * Main method - in this method an instance of the controller is created and
+     * the method to launch the robot is called.
+     *
+     * @param args
+     */
+    public static void main(String[] args) {
+        ProportionalLightStopper controller = new ProportionalLightStopper();
+        controller.run();
+    }
+
     @Override
     public double[][] getMatrix() {
         return controllerMatrix;
@@ -44,16 +55,5 @@ public class ProportionalLightStopper extends ProportionalBaseController {
         }
 
         return speeds;
-    }
-
-    /**
-     * Main method - in this method an instance of the controller is created and
-     * the method to launch the robot is called.
-     *
-     * @param args
-     */
-    public static void main(String[] args) {
-        ProportionalLightStopper controller = new ProportionalLightStopper();
-        controller.run();
     }
 }

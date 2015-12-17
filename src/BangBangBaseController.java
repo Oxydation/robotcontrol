@@ -1,7 +1,3 @@
-import com.cyberbotics.webots.controller.DifferentialWheels;
-import com.cyberbotics.webots.controller.DistanceSensor;
-import com.cyberbotics.webots.controller.LightSensor;
-
 /**
  * Created by Mathias on 07/12/2015.
  */
