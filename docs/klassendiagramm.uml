@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Diagram>
+  <ID>JAVA</ID>
+  <OriginalElement />
+  <nodes>
+    <node x="2434.0" y="821.5">ProportionalLightRunner</node>
+    <node x="1518.5" y="0.0">BaseController</node>
+    <node x="2083.0" y="821.5">ProportionalWallRunner</node>
+    <node x="2417.0" y="492.0">ProportionalBaseController</node>
+    <node x="3136.0" y="821.5">ProportionalBallPusher</node>
+    <node x="2785.0" y="821.5">ProportionalBasicReactive</node>
+    <node x="1041.0" y="795.0">BangBangLightStopper</node>
+    <node x="0.0" y="808.5">BangBangBallPusher</node>
+    <node x="706.0" y="822.5">BangBangLightRunner</node>
+    <node x="1379.0" y="808.5">BangBangWallRunner</node>
+    <node x="360.0" y="822.5">BangBangBasicReactive</node>
+    <node x="1732.0" y="821.5">ProportionalLightStopper</node>
+    <node x="704.5" y="519.5">BangBangBaseController</node>
+  </nodes>
+  <notes />
+  <edges>
+    <edge source="BangBangLightRunner" target="BangBangBaseController">
+      <point x="0.0" y="-99.0" />
+      <point x="0.0" y="99.0" />
+    </edge>
+    <edge source="BangBangLightStopper" target="BangBangBaseController">
+      <point x="0.0" y="-126.5" />
+      <point x="1200.0" y="775.0" />
+      <point x="927.1" y="775.0" />
+      <point x="63.60000000000002" y="99.0" />
+    </edge>
+    <edge source="ProportionalLightRunner" target="ProportionalBaseController">
+      <point x="0.0" y="-100.0" />
+      <point x="0.0" y="126.5" />
+    </edge>
+    <edge source="ProportionalLightStopper" target="ProportionalBaseController">
+      <point x="0.0" y="-100.0" />
+      <point x="1897.5" y="765.0" />
+      <point x="2453.5" y="765.0" />
+      <point x="-146.0" y="126.5" />
+    </edge>
+    <edge source="ProportionalWallRunner" target="ProportionalBaseController">
+      <point x="0.0" y="-100.0" />
+      <point x="2248.5" y="775.0" />
+      <point x="2526.5" y="775.0" />
+      <point x="-73.0" y="126.5" />
+    </edge>
+    <edge source="ProportionalBasicReactive" target="ProportionalBaseController">
+      <point x="0.0" y="-100.0" />
+      <point x="2950.5" y="775.0" />
+      <point x="2672.5" y="775.0" />
+      <point x="73.0" y="126.5" />
+    </edge>
+    <edge source="BangBangWallRunner" target="BangBangBaseController">
+      <point x="0.0" y="-113.0" />
+      <point x="1545.5" y="765.0" />
+      <point x="990.7" y="765.0" />
+      <point x="127.20000000000005" y="99.0" />
+    </edge>
+    <edge source="ProportionalBaseController" target="BaseController">
+      <point x="0.0" y="-126.5" />
+      <point x="2599.5" y="467.0" />
+      <point x="1838.0" y="467.0" />
+      <point x="106.5" y="221.0" />
+    </edge>
+    <edge source="BangBangBasicReactive" target="BangBangBaseController">
+      <point x="0.0" y="-99.0" />
+      <point x="523.0" y="775.0" />
+      <point x="799.9" y="775.0" />
+      <point x="-63.60000000000002" y="99.0" />
+    </edge>
+    <edge source="ProportionalBallPusher" target="ProportionalBaseController">
+      <point x="0.0" y="-100.0" />
+      <point x="3301.5" y="765.0" />
+      <point x="2745.5" y="765.0" />
+      <point x="146.0" y="126.5" />
+    </edge>
+    <edge source="BangBangBaseController" target="BaseController">
+      <point x="0.0" y="-99.0" />
+      <point x="863.5" y="467.0" />
+      <point x="1625.0" y="467.0" />
+      <point x="-106.5" y="221.0" />
+    </edge>
+    <edge source="BangBangBallPusher" target="BangBangBaseController">
+      <point x="0.0" y="-113.0" />
+      <point x="170.0" y="765.0" />
+      <point x="736.3" y="765.0" />
+      <point x="-127.20000000000005" y="99.0" />
+    </edge>
+  </edges>
+  <settings layout="Hierarchic Group" zoom="0.42902208201892744" x="1733.5" y="584.8492647058823" />
+  <SelectedNodes>
+    <node>BangBangBaseController</node>
+  </SelectedNodes>
+  <Categories>
+    <Category>Fields</Category>
+    <Category>Constructors</Category>
+    <Category>Methods</Category>
+    <Category>Inner Classes</Category>
+    <Category>Properties</Category>
+  </Categories>
+  <SCOPE>All</SCOPE>
+  <VISIBILITY>private</VISIBILITY>
+</Diagram>
+
