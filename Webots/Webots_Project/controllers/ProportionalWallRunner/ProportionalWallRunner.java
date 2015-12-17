@@ -6,7 +6,7 @@ public class ProportionalWallRunner extends ProportionalBaseController {
 
     private static double[][] controllerMatrix = {
             // FRONT_RIGHT, MIDDLE_RIGHT, RIGHT, BACK_RIGHT, BACK_LEFT, LEFT, MIDDLE_LEFT, FRONT_LEF
-            {0, 0, 0, 0, 0, 0, 0, 0, 1, -1, -1, 1, 0, 0, 0, 0},
+            {0, 0, 0, 0, 0, 0, 0, 0, -1, -1, -1, 1, 0, 0, 0, 0},
             {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, -1, -1, -1}
     };
 
