@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<eclipse-userlibraries>
+  <library name="Controller">
+    <archive path="D:/Developement/Java/Projects_Intellij/RobotControl/lib/Controller.jar" />
+  </library>
+</eclipse-userlibraries>
+
