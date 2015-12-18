@@ -1,4 +1,4 @@
-public class BangBangBasicReactive extends BaseController {
+public class BangBangBasicReactive extends BangBangBaseController {
     /**
      * Constructor
      */

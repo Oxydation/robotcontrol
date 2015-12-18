@@ -1,7 +1,7 @@
 /**
  * Created by Mathias on 14/12/2015.
  */
-public class BangBangWallRunner extends BaseController {
+public class BangBangWallRunner extends BangBangBaseController {
     private static int DISTANCE_TO_WALL = 50;
 
     /**
@@ -47,17 +47,6 @@ public class BangBangWallRunner extends BaseController {
             } else {
                 driveForward();
             }
-
-            /*
-
-            else if (_distanceSensors[S_LEFT].getValue() >= DISTANCE_TO_WALL) {
-                driveRight();
-            } else if (_distanceSensors[S_LEFT].getValue() >= DISTANCE_TO_WALL) {
-                driveLeft();
-            }
-             */
-            // drive forward if nothing is in front of the robot
-            //driveForward();
         }
     }
 

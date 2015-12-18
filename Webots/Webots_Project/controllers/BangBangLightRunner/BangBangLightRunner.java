@@ -1,7 +1,7 @@
 /**
  * Created by Mathias on 14/12/2015.
  */
-public class BangBangLightRunner extends BaseController {
+public class BangBangLightRunner extends BangBangBaseController {
     /**
      * Constructor
      */
@@ -27,8 +27,6 @@ public class BangBangLightRunner extends BaseController {
             double left = _lightSensors[S_FRONT_LEFT].getValue() + _lightSensors[S_LEFT].getValue();
             double right = _lightSensors[S_FRONT_RIGHT].getValue() + _lightSensors[S_RIGHT].getValue();
 
-            System.out.println(left);
-            System.out.println(right);
             if (left < right) {
                 // drive left - reached light
                 driveLeft();

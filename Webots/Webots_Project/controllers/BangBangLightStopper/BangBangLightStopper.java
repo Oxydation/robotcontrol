@@ -1,8 +1,8 @@
 /**
  * Created by Mathias on 14/12/2015.
  */
-public class BangBangLightStopper extends BaseController {
-    private static int MIN_DISTANCE = 1000;
+public class BangBangLightStopper extends BangBangBaseController {
+    private static int MIN_DISTANCE = 800;
     private static int MAX_LIGHT = 2400;
 
     /**
